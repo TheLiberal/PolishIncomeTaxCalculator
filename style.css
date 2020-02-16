@@ -1,0 +1,40 @@
+* {
+  font-family: "Roboto";
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+  padding: 1rem;
+  max-width: 100%;
+  margin: auto;
+}
+
+form {
+  align-items: center;
+  margin: auto;
+}
+
+.button {
+  display: block;
+  margin: 1rem;
+  padding-top: 4rem;
+  margin: auto;
+  align-items: center;
+}
+
+a {
+  background-color: #191717;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #f4f4f4;
+  font-size: 2rem;
+}
+
+label {
+  font-size: 1.5rem;
+}

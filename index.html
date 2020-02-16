@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Kalkulator podatkowy</title>
+  </head>
+  <body>
+    <header></header>
+    <section>
+      <div class="container">
+        <form action="get">
+          <input type="number" name="input" id="input" />
+          <label for="income">Przychód</label>
+
+          <input type="number" name="zus" id="zus" />
+          <label for="zus">Ubezpieczenie społeczne</label>
+
+          <input type="number" name="tax" id="tax" />
+          <label for="tax">Podatek</label>
+
+          <input type="number" name="health" id="health" />
+          <label for="healthcare">Ubezpieczenie zdrowotne</label>
+
+          <input type="number" name="netto" id="netto" />
+          <label for="netto">Kwota na rękę</label>
+
+          <input type="number" name="us" id="us" />
+          <label for="netto">Kwota do Urzędu Skarbowego</label>
+        </form>
+        <div class="button"><a href="#">Oblicz</a></div>
+      </div>
+    </section>
+    <footer></footer>
+    <script type="text/javascript" src="app.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
