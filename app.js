@@ -98,22 +98,27 @@ function umowaZlecenie(e) {
   document.getElementById(
     "zl_koszty_uzyskania_przychodu"
   ).value = zlKosztyUzyskaniaPrzychodu;
+  zlKosztyUzyskaniaPrzychodu = +zlKosztyUzyskaniaPrzychodu.toFixed(2);
 
   //   Podatek
   zlPodatek = (zlPrzychod - zlKosztyUzyskaniaPrzychodu) * 0.18;
   zlPodatek = Math.round(zlPodatek);
   document.getElementById("zl_podatek").value = zlPodatek;
 
-  //   Ubezpiecznie zdrowotne
+  //   Ubezpieczenie zdrowotne
   zlUbezpieczenieZdrowotne = (zlPrzychod - zlKosztyUzyskaniaPrzychodu) * 0.0775;
+  zlUbezpieczenieZdrowotne = +zlUbezpieczenieZdrowotne.toFixed(2);
   document.getElementById(
     "zl_ubezpieczenie_zdrowotne"
   ).value = zlUbezpieczenieZdrowotne;
+  
 
   zlKwotaDoUrzeduSkarbowego = zlPodatek - zlUbezpieczenieZdrowotne;
+  zlKwotaDoUrzeduSkarbowego = +zlKwotaDoUrzeduSkarbowego.toFixed(2);
   document.getElementById(
     "zl_kwota_do_urzedu_skarbowego"
   ).value = zlKwotaDoUrzeduSkarbowego;
+  
 
   //   Kwota na reke
   zlKwotaNaReke =
@@ -121,6 +126,7 @@ function umowaZlecenie(e) {
     zlKwotaDoUrzeduSkarbowego -
     zlUbezpieczenieZdrowotne -
     (zlPrzychod - zlKosztyUzyskaniaPrzychodu) * 0.0125;
+  zlKwotaNaReke = +zlKwotaNaReke.toFixed(2);
   document.getElementById("zl_kwota_na_reke").value = zlKwotaNaReke;
   e.preventDefault();
   $("label").addClass("active");
@@ -141,16 +147,19 @@ function umowaODzielo(e) {
     document.getElementById("dz_koszty_uzyskania_przychodu").value *
     0.01 *
     dzPrzychod;
+  dzKosztyUzyskaniaPrzychodu = +dzKosztyUzyskaniaPrzychodu.toFixed(2);
   document.getElementById(
     "dz_koszty_uzyskania_przychodu_kwota"
   ).value = dzKosztyUzyskaniaPrzychodu;
 
   //   Podatek
   dzPodatek = (dzPrzychod - dzKosztyUzyskaniaPrzychodu) * 0.18;
+  dzPodatek = +dzPodatek.toFixed(2);
   document.getElementById("dz_podatek").value = dzPodatek;
 
   //   Kwota na reke
   dzKwotaNaReke = dzPrzychod - dzPodatek;
+  dzKwotaNaReke = +dzKwotaNaReke.toFixed(2);
   document.getElementById("dz_kwota_na_reke").value = dzKwotaNaReke;
 
   e.preventDefault();
