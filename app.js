@@ -95,10 +95,11 @@ function umowaZlecenie(e) {
 
   //   Koszty uzyskania przychodu
   zlKosztyUzyskaniaPrzychodu = zlPrzychod * 0.2;
+  zlKosztyUzyskaniaPrzychodu = +zlKosztyUzyskaniaPrzychodu.toFixed(2);
   document.getElementById(
     "zl_koszty_uzyskania_przychodu"
   ).value = zlKosztyUzyskaniaPrzychodu;
-  zlKosztyUzyskaniaPrzychodu = +zlKosztyUzyskaniaPrzychodu.toFixed(2);
+  
 
   //   Podatek
   zlPodatek = (zlPrzychod - zlKosztyUzyskaniaPrzychodu) * 0.18;
