@@ -1,57 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!--Import Google Icon Font-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
     <!--Import materialize.css-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
     <!-- Compiled and minified CSS -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
     />
 
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Kalkulator podatkowy</title>
+    <title>Kalkulator Podatku Dochodowego</title>
   </head>
+
   <body>
-    <header></header>
-    <section>
-      <div class="container">
-        <form action="get">
-          <input type="number" name="input" id="input" />
-          <label for="income">Przychód</label>
+    <!-- Navigation bar -->
+    <nav class="nav-wrapper green darken-3">
+      <a href="#" class="brand-logo center"
+        ><i class="material-icons" id="logo">accessible_forward</i></a
+      >
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#umowa-o-prace">Umowa o pracę</a></li>
+        <li><a href="#umowa-zlecenie">Umowa zlecenie</a></li>
+        <li><a href="#umowa-o-dzielo">Umowa o dzieło</a></li>
+      </ul>
+    </nav>
 
-          <input type="number" name="zus" id="zus" />
-          <label for="zus">Ubezpieczenie społeczne</label>
+    <!-- Umowa o prace -->
+    <section id="umowa-o-prace">
+      <h2 class="center" id="first-title">Umowa o pracę</h2>
+      <form>
+        <div class="input-field first-input-field">
+          <input type="number" id="przychod" />
+          <label for="przychod" class="active label">Przychód</label>
+        </div>
 
-          <input type="number" name="tax" id="tax" />
-          <label for="tax">Podatek</label>
+        <div class="input-field">
+          <select name="miejsce_zamieszkania" id="miejsce_zamieszkania">
+            <option id="option-1">Nie</option>
+            <option id="option-2">Tak</option>
+          </select>
+          <label>Czy mieszka w tej samej miejscowości, gdzie pracuje?</label>
+        </div>
 
-          <input type="number" name="health" id="health" />
-          <label for="healthcare">Ubezpieczenie zdrowotne</label>
+        <div class="input-field">
+          <input type="number" id="ubezpieczenie_spoleczne" />
+          <label for="ubezpieczenie_spoleczne" class="active label"
+            >Ubezpieczenie społeczne</label
+          >
+        </div>
 
-          <input type="number" name="netto" id="netto" />
-          <label for="netto">Kwota na rękę</label>
+        <div class="input-field">
+          <input type="number" id="podatek" />
+          <label for="podatek" class="label">Podatek</label>
+        </div>
 
-          <input type="number" name="us" id="us" />
-          <label for="netto">Kwota do Urzędu Skarbowego</label>
-        </form>
-        <div class="button"><a href="#">Oblicz</a></div>
-      </div>
+        <div class="input-field">
+          <input type="number" id="ubezpieczenie_zdrowotne" />
+          <label for="ubezpieczenie_zdrowotne" class="active label"
+            >Ubezpieczenie zdrowotne</label
+          >
+        </div>
+
+        <div class="input-field">
+          <input type="number" id="kwota_na_reke" />
+          <label for="kwota_na_reke" class="active label">Kwota na rękę</label>
+        </div>
+
+        <div class="input-field">
+          <input type="number" id="kwota_do_urzedu_skarbowego" />
+          <label for="kwota_do_urzedu_skarbowego" class="active label"
+            >Kwota do urzędu skarbowego</label
+          >
+        </div>
+      </form>
+      <button
+        class="btn-floating green btn-large waves-effect"
+        id="calculate_umowa_o_prace"
+      >
+        <i class="material-icons">send</i>
+      </button>
     </section>
-    <footer></footer>
-    <script type="text/javascript" src="app.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Umowa zlecenie  -->
+    <section id="umowa-zlecenie">
+      <h2 class="center">Umowa zlecenie</h2>
+      <form>
+        <div class="input-field">
+          <input type="number" id="zl_przychod" />
+          <label for="zl_przychod" class="active label">Przychód</label>
+        </div>
+        <div class="input-field">
+          <input type="number" id="zl_koszty_uzyskania_przychodu" />
+          <label for="zl_koszty_uzyskania_przychodu" class="active label"
+            >Koszty uzyskania przychodu (kwota)</label
+          >
+        </div>
+        <div class="input-field">
+          <input type="number" id="zl_podatek" />
+          <label for="zl_podatek" class="active label">Podatek</label>
+        </div>
+        <div class="input-field">
+          <input type="number" id="zl_ubezpieczenie_zdrowotne" />
+          <label for="zl_ubezpieczenie_zdrowotne" class="active label"
+            >Ubezpieczenie zdrowotne</label
+          >
+        </div>
+        <div class="input-field">
+          <input type="number" id="zl_kwota_na_reke" />
+          <label for="zl_kwota_na_reke" class="active label"
+            >Kwota na rękę</label
+          >
+        </div>
+        <div class="input-field">
+          <input type="number" id="zl_kwota_do_urzedu_skarbowego" />
+          <label for="zl_kwota_do_urzedu_skarbowego" class="active label"
+            >Kwota do urzędu skarbowego</label
+          >
+        </div>
+      </form>
+      <button
+        class="btn-floating green btn-large waves-effect"
+        id="calculate_umowa_zlecenie"
+      >
+        <i class="material-icons">send</i>
+      </button>
+    </section>
+
+    <!-- Umowa o dzielo -->
+    <section id="umowa-o-dzielo">
+      <h2 class="center">Umowa o dzieło</h2>
+      <form>
+        <div class="input-field first-input-field">
+          <input type="number" id="dz_przychod" />
+          <label for="dz_przychod" class="active label">Przychód</label>
+        </div>
+        <div class="input-field">
+          <select
+            name="dz_koszty_uzyskania_przychodu"
+            id="dz_koszty_uzyskania_przychodu"
+          >
+            <option value="20">20%</option>
+            <option value="50">50%</option>
+          </select>
+          <label>Koszty uzyskania przychodu</label>
+        </div>
+        <div class="input-field">
+          <input type="number" id="dz_koszty_uzyskania_przychodu_kwota" />
+          <label for="dz_koszty_uzyskania_przychodu_kwota" class="active label"
+            >Koszty uzyskania przychodu (kwota)</label
+          >
+        </div>
+        <div class="input-field">
+          <input type="number" id="dz_podatek" />
+          <label for="dz_podatek" class="active label">Podatek</label>
+        </div>
+        <div class="input-field">
+          <input type="number" id="dz_kwota_na_reke" />
+          <label for="dz_kwota_na_reke" class="active label"
+            >Kwota na rękę</label
+          >
+        </div>
+      </form>
+      <button
+        class="btn-floating green btn-large waves-effect"
+        id="calculate_umowa_o_dzielo"
+      >
+        <i class="material-icons">send</i>
+      </button>
+    </section>
+
+    <!--Import jQuery before materialize.js-->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("select").material_select();
+      });
+    </script>
+    <script src="app.js"></script>
   </body>
 </html>
