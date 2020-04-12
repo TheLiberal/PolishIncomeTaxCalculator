@@ -99,7 +99,7 @@ function umowaZlecenie(e) {
   document.getElementById(
     "zl_koszty_uzyskania_przychodu"
   ).value = zlKosztyUzyskaniaPrzychodu;
-  
+
 
   //   Podatek
   zlPodatek = (zlPrzychod - zlKosztyUzyskaniaPrzychodu) * 0.18;
@@ -112,14 +112,14 @@ function umowaZlecenie(e) {
   document.getElementById(
     "zl_ubezpieczenie_zdrowotne"
   ).value = zlUbezpieczenieZdrowotne;
-  
+
 
   zlKwotaDoUrzeduSkarbowego = zlPodatek - zlUbezpieczenieZdrowotne;
   zlKwotaDoUrzeduSkarbowego = +zlKwotaDoUrzeduSkarbowego.toFixed(2);
   document.getElementById(
     "zl_kwota_do_urzedu_skarbowego"
   ).value = zlKwotaDoUrzeduSkarbowego;
-  
+
 
   //   Kwota na reke
   zlKwotaNaReke =
